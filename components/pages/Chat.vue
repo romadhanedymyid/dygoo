@@ -127,7 +127,6 @@
 
 <script>
     import '~/plugins/VueChatScroll'
-    import VueCookie from 'vue-cookie'
 
     export default {
         mounted() {
@@ -149,8 +148,7 @@
         },
         methods: {
             async logout() {
-                VueCookie.delete("_____AuthUsername")
-                VueCookie.delete("_____AuthRoom")
+                await this.$store.dispatch('logout')
                 this.redirectToLogin()
             },
             nuxtSocketRegister() {

@@ -1,8 +1,10 @@
 export default {
-		generate: {
-			fallback: true
-		},
     loading: '~/components/Preloader.vue',
+    // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
+		ssr: false,
+
+		// Target (https://go.nuxtjs.dev/config-target)
+		target: 'static',
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
       title: 'Dygoo',
@@ -52,7 +54,7 @@ export default {
 			// module options
 			sockets: [{
 				name: 'main',
-				url: 'ws://dygoo.herokuapp.com'
+				url: 'ws://dygoo-server.romadhanedy.repl.co'
 			}]
 		},
   

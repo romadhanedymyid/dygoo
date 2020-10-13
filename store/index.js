@@ -41,6 +41,9 @@ export const actions = {
     },
     async logout ({ commit }) {
         try {
+            VueCookie.delete("_____AuthUsername")
+            VueCookie.delete("_____AuthRoom")
+            
             commit('SET_AUTH_USER', "")
         }
         catch (error) {
