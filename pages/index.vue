@@ -8,6 +8,7 @@
     import Chat from "~/components/pages/Chat"
 
     export default {
+        middleware: 'authenticated',
         asyncData () {
             return new Promise((resolve) => {
                 setTimeout(function () {
