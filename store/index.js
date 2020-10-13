@@ -11,11 +11,11 @@ export const mutations = {
 }
 
 export const actions = {
-    nuxtServerInit ({ commit }, { req }) {
-        if (req.session && req.session.authUser) {
-            commit('SET_AUTH_USER', req.session.authUser)
-        }
-    },
+    // nuxtServerInit ({ commit }, { req }) {
+    //     if (req.session && req.session.authUser) {
+    //         commit('SET_AUTH_USER', req.session.authUser)
+    //     }
+    // },
     async login ({ commit }, { username, room }) {
         try {
             const response = await axios.post('/api/login', { username, room })
