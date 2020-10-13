@@ -1,7 +1,3 @@
-import bodyParser from 'body-parser'
-import session from 'express-session'
-var MemoryStore = require('memorystore')(session)
-
 export default {
     // Global page headers (https://go.nuxtjs.dev/config-head)
     loading: '~/components/Preloader.vue',
@@ -60,23 +56,5 @@ export default {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
 		},
-		
-		serverMiddleware: [
-			// body-parser middleware
-			bodyParser.json(),
-			// session middleware
-			session({
-				secret: 'super-secret-key',
-				resave: false,
-				saveUninitialized: false,
-                cookie: { maxAge: 60000 },
-                store: new MemoryStore({
-                    checkPeriod: 86400000 // prune expired entries every 24h
-                }),
-			}),
-			// Api middleware
-			// We add /api/login & /api/logout routes
-			'~/api'
-		]
   }
   
