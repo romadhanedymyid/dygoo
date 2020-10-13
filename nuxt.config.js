@@ -1,4 +1,7 @@
 export default {
+		generate: {
+			fallback: true
+		},
     loading: '~/components/Preloader.vue',
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
