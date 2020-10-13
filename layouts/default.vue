@@ -24,7 +24,7 @@
     import Footer from "~/components/layouts/Footer"
 
     export default {
-        middleware: 'auth',
+        middleware: 'authenticated',
         head: {
             bodyAttrs: {
                 "data-layout": "horizontal",

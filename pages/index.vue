@@ -15,10 +15,6 @@
                 }, 1000)
             })
         },
-        data() {
-            return {
-            }
-        },
         components: { Chat }
     }
 </script>

@@ -1,4 +1,5 @@
 import VueCookie from 'vue-cookie'
+import CookieParser from 'cookieparser'
 
 export const state = () => ({
     authUser: ""
@@ -11,19 +12,17 @@ export const mutations = {
 }
 
 export const actions = {
-    // nuxtServerInit ({ commit }) {
-    //     const username = VueCookie.get("_____AuthUsername"),
-    //     room = VueCookie.get("_____AuthRoom")
+    nuxtServerInit ({ commit }, { req }) {
+        if(req && req.headers && req.headers.cookie) {
+            const cookieParsed = CookieParser.parse(req.headers.cookie)
+            const data = {
+                username: cookieParsed._____AuthUsername,
+                room: cookieParsed._____AuthRoom
+            }
 
-    //     console.log(username)
-
-    //     const data = {
-    //         username: username,
-    //         room: room
-    //     }
-
-    //     commit('SET_AUTH_USER', data)
-    // },
+            commit('SET_AUTH_USER', data)
+        }
+    },
     async login ({ commit }, { username, room }) {
         try {
             const data = {

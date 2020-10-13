@@ -46,6 +46,7 @@
 
 <script>
     export default {
+        middleware: "notAuthenticated",
         asyncData () {
             return new Promise((resolve) => {
                 setTimeout(function () {
