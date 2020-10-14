@@ -54,7 +54,7 @@ export default {
 			// module options
 			sockets: [{
 				name: 'main',
-				url: 'ws://dygoo-server.romadhanedy.repl.co'
+				url: 'https://dygoo.herokuapp.com'
 			}]
 		},
   
